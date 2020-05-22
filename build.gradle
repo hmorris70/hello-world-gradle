@@ -1,7 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.3.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-	id 'com.jfrog.artifactory'
+	id "com.jfrog.artifactory" version "4.15.2"
 	id 'java'
 }
 
@@ -36,7 +36,8 @@ publishing {
 }
 
 artifactory {
-    contextUrl = "${artifactory_contextUrl}"
+    // contextUrl = "${artifactory_contextUrl}"
+    contextUrl = "http://3.21.21.151:8081/artifactory"
     publish {
         repository {
             repoKey = 'libs-snapshot-local'
