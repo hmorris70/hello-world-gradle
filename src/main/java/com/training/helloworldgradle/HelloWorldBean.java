@@ -1,5 +1,8 @@
 package com.training.helloworldgradle;
 
+/*
+ * get a build to run
+ */
 public class HelloWorldBean {
 
 	private String message;
