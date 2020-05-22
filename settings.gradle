@@ -1,5 +1,5 @@
 rootProject.name = 'hello-world-gradle'
-currentVersion=0.1-SNAPSHOT
-artifactory_contextUrl=http://3.21.21.151:8081/artifactory
-artifactory_user=admin
-artifactory_password=password
+currentVersion = '0.1-SNAPSHOT'
+artifactory_contextUrl= 'http://3.21.21.151:8081/artifactory'
+artifactory_user = 'admin'
+artifactory_password = 'password'
