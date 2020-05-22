@@ -6,9 +6,12 @@ plugins {
 }
 
 group = 'com.training'
-//version = currentVersion
-version = '0.0.1'
+version = currentVersion
 sourceCompatibility = '1.8'
+
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 repositories {
 	// mavenCentral()
@@ -37,8 +40,7 @@ publishing {
 }
 
 artifactory {
-    // contextUrl = "${artifactory_contextUrl}"
-    contextUrl = "http://3.21.21.151:8081/artifactory"
+    contextUrl = "${artifactory_contextUrl}"
     publish {
         repository {
             repoKey = 'libs-snapshot-local'
