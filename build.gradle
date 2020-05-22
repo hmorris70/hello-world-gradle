@@ -5,11 +5,12 @@ plugins {
 }
 
 group = 'com.training'
-version = '0.0.1-SNAPSHOT'
+version = currentVersion
 sourceCompatibility = '1.8'
 
 repositories {
-	mavenCentral()
+	// mavenCentral()
+	jcenter()
 }
 
 dependencies {
@@ -24,3 +25,34 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"
+    publish {
+        repository {
+            repoKey = 'libs-snapshot-local'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+
+        }       
+        defaults {
+            publications ('mavenJava')
+            publishArtifacts = true
+            properties = ['qa.level': 'basic', 'dev.team': 'core']
+            publishPom = true
+        }
+        resolve {
+        	repoKey = 'jcenter' 
+        }
+    }
+}
+
