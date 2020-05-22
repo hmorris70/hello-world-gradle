@@ -60,7 +60,3 @@ artifactory {
         }
     }
 }
-
-tasks.withType(GenerateModuleMetadata) {
-        enabled = false
-    }
